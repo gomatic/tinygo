@@ -9,7 +9,7 @@ import (
 
 func main() {
 	led := machine.LED
-	led.Configure(machine.PinConfig{Mode: machine.PinOutput})
+	led.Configure(machine.PinConfigOutput())
 	for {
 		led.Low()
 		time.Sleep(time.Millisecond * 500)

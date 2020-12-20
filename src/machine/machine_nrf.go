@@ -21,6 +21,16 @@ const (
 	PinOutput        PinMode = (nrf.GPIO_PIN_CNF_DIR_Output << nrf.GPIO_PIN_CNF_DIR_Pos) | (nrf.GPIO_PIN_CNF_INPUT_Disconnect << nrf.GPIO_PIN_CNF_INPUT_Pos)
 )
 
+// PinConfigOutput is a convenience function that returns a PinConfig struct for output mode.
+func PinConfigOutput() PinConfig {
+	return PinConfig{Mode: PinOutput}
+}
+
+// PinConfigInput is a convenience function that returns a PinConfig struct for input mode.
+func PinConfigInput() PinConfig {
+	return PinConfig{Mode: PinInputPullup}
+}
+
 type PinChange uint8
 
 // Pin change interrupt constants for SetInterrupt.

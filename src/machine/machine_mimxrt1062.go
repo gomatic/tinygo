@@ -44,6 +44,16 @@ const (
 	PinModeI2CSCL
 )
 
+// PinConfigOutput is a convenience function that returns a PinConfig struct for output mode.
+func PinConfigOutput() PinConfig {
+	return PinConfig{Mode: PinOutput}
+}
+
+// PinConfigInput is a convenience function that returns a PinConfig struct for input mode.
+func PinConfigInput() PinConfig {
+	return PinConfig{Mode: PinInputPullUp}
+}
+
 type PinChange uint8
 
 const (

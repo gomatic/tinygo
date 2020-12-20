@@ -16,6 +16,16 @@ const (
 	PinOutput
 )
 
+// PinConfigOutput is a convenience function that returns a PinConfig struct for output mode.
+func PinConfigOutput() PinConfig {
+	return PinConfig{Mode: PinOutput}
+}
+
+// PinConfigInput is a convenience function that returns a PinConfig struct for input mode.
+func PinConfigInput() PinConfig {
+	return PinConfig{Mode: PinInputPullup}
+}
+
 // In all the AVRs I've looked at, the PIN/DDR/PORT registers followed a regular
 // pattern: PINx, DDRx, PORTx in this order without registers in between.
 // Therefore, if you know any of them, you can calculate the other two.

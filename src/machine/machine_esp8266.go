@@ -18,6 +18,16 @@ const (
 	PinInput
 )
 
+// PinConfigOutput is a convenience function that returns a PinConfig struct for output mode.
+func PinConfigOutput() PinConfig {
+	return PinConfig{Mode: PinOutput}
+}
+
+// PinConfigInput is a convenience function that returns a PinConfig struct for input mode.
+func PinConfigInput() PinConfig {
+	return PinConfig{Mode: PinInput}
+}
+
 // Pins that are fixed by the chip.
 const (
 	UART_TX_PIN Pin = 1

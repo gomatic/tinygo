@@ -32,6 +32,16 @@ const (
 	PinOutputModeAltOpenDrain PinMode = 12 // Output mode alt. purpose open drain
 )
 
+// PinConfigOutput is a convenience function that returns a PinConfig struct for output mode.
+func PinConfigOutput() PinConfig {
+	return PinConfig{Mode: PinOutput}
+}
+
+// PinConfigInput is a convenience function that returns a PinConfig struct for input mode.
+func PinConfigInput() PinConfig {
+	return PinConfig{Mode: PinInput}
+}
+
 // Configure this pin with the given I/O settings.
 // stm32f1xx uses different technique for setting the GPIO pins than the stm32f407
 func (p Pin) Configure(config PinConfig) {

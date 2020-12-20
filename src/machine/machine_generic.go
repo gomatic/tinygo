@@ -19,6 +19,16 @@ const (
 	PinInputPulldown
 )
 
+// PinConfigOutput is a convenience function that returns a PinConfig struct for output mode.
+func PinConfigOutput() PinConfig {
+	return PinConfig{Mode: PinOutput}
+}
+
+// PinConfigInput is a convenience function that returns a PinConfig struct for input mode.
+func PinConfigInput() PinConfig {
+	return PinConfig{Mode: PinInputPullup}
+}
+
 func (p Pin) Configure(config PinConfig) {
 	gpioConfigure(p, config)
 }
